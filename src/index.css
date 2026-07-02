@@ -1,0 +1,238 @@
+:root {
+  --bg: #f7f5f2;
+  --surface: #ffffff;
+  --text: #24201b;
+  --muted: #74695f;
+  --accent: #b5562a;
+  --accent-dark: #8e431e;
+  --border: #e6e0d8;
+  --danger: #b3261e;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Iowan Old Style", serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar nav a.active,
+.navbar nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.navbar-user {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  flex: 1;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.status {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 3rem;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.story-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.story-card h3 {
+  margin: 0;
+  color: var(--accent-dark);
+}
+
+.story-card p {
+  margin: 0;
+  color: var(--muted);
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: white;
+}
+
+.form-page,
+.details-page {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.story-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.story-form label {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.story-form input,
+.story-form textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.story-form input:focus,
+.story-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.story-form button {
+  margin-top: 1.25rem;
+  align-self: flex-start;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.story-content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: var(--text);
+}
